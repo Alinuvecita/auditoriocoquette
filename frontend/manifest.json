@@ -1,0 +1,23 @@
+{
+  "name": "Auditorio Coquette",
+  "short_name": "Auditorio",
+  "description": "PWA para comprar boletos de eventos del auditorio universitario.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff0f6",
+  "theme_color": "#ff7eb6",
+  "icons": [
+    {
+      "src": "img/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

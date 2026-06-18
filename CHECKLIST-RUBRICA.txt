@@ -1,0 +1,47 @@
+CHECKLIST DE LA RÚBRICA
+
+[✓] Aplicación móvil o PWA
+    - frontend/manifest.json
+    - frontend/service-worker.js
+
+[✓] Frontend
+    - HTML, CSS y JavaScript en carpeta frontend
+
+[✓] Backend
+    - Node.js + Express en carpeta backend
+
+[✓] Comunicación cliente-servidor
+    - fetch async/await en frontend/js/api.js
+    - Rutas /api/auth, /api/events, /api/tickets
+
+[✓] Procesos/Hilos/Asincronismo
+    - async/await en registro, login, eventos, compras y CRUD
+    - envío de correos con nodemailer
+    - consultas a PostgreSQL
+
+[✓] Base de datos persistente
+    - PostgreSQL
+    - backend/scripts/schema.sql
+
+[✓] Sistema de usuarios
+    - Registro por correo
+    - Login
+    - JWT
+    - Verificación de cuenta por correo
+
+[✓] Recuperación de contraseña
+    - Solicitud de recuperación
+    - Enlace por correo
+    - Restablecimiento mediante token
+
+[✓] CRUD
+    - Crear, leer, editar y eliminar eventos en admin-eventos.html
+
+[✓] Compra/reserva de boletos
+    - Pago simulado
+    - Folio
+    - Historial
+    - Descuento de cupos
+
+[✓] Gama rosa/coquette
+    - frontend/css/styles.css

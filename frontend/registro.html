@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7eb6">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+
+  <title>Registro · Auditorio Coquette</title>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">🎀</span>
+      <span>Auditorio Coquette</span>
+    </a>
+    <nav class="nav-links">
+      <span class="small" data-user-name></span>
+      <a href="eventos.html">Eventos</a>
+      <a href="historial.html" data-history-link class="hidden">Mis boletos</a>
+      <a href="perfil.html" data-profile-link class="hidden">Perfil</a>
+      <a href="admin-eventos.html" data-admin-link class="hidden">Admin</a>
+      <a href="login.html" data-login-link>Login</a>
+      <a href="registro.html" data-register-link class="primary-link">Registro</a>
+      <button data-logout-button class="hidden">Salir</button>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="form-page">
+    <section class="card form-card">
+      <span class="badge">Crear cuenta</span>
+      <h1 style="font-size: 3rem;">Registro 🎀</h1>
+      <p class="lead">Regístrate con tu correo. Te enviaremos un enlace para activar tu cuenta.</p>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" type="text" placeholder="Ej. Fabiola Pérez" required>
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" type="email" placeholder="tu_correo@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" minlength="6" placeholder="Mínimo 6 caracteres" required>
+        </div>
+        <button class="btn" type="submit">Registrarme</button>
+      </form>
+
+      <div id="msg" class="hidden"></div>
+      <p class="small">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </section>
+  </main>
+
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+
+  <script src="js/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7eb6">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+
+  <title>Mis boletos · Auditorio Coquette</title>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">🎀</span>
+      <span>Auditorio Coquette</span>
+    </a>
+    <nav class="nav-links">
+      <span class="small" data-user-name></span>
+      <a href="eventos.html">Eventos</a>
+      <a href="historial.html" data-history-link class="hidden">Mis boletos</a>
+      <a href="perfil.html" data-profile-link class="hidden">Perfil</a>
+      <a href="admin-eventos.html" data-admin-link class="hidden">Admin</a>
+      <a href="login.html" data-login-link>Login</a>
+      <a href="registro.html" data-register-link class="primary-link">Registro</a>
+      <button data-logout-button class="hidden">Salir</button>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="badge">Historial</span>
+        <h1 style="font-size: clamp(2.2rem, 6vw, 4rem);">Mis boletos 🎫</h1>
+        <div id="historyContainer"></div>
+      </div>
+    </section>
+  </main>
+
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+
+  <script src="js/historial.js"></script>
+</body>
+</html>

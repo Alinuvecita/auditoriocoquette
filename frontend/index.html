@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7eb6">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+
+  <title>Auditorio Coquette</title>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">🎀</span>
+      <span>Auditorio Coquette</span>
+    </a>
+    <nav class="nav-links">
+      <span class="small" data-user-name></span>
+      <a href="eventos.html">Eventos</a>
+      <a href="historial.html" data-history-link class="hidden">Mis boletos</a>
+      <a href="perfil.html" data-profile-link class="hidden">Perfil</a>
+      <a href="admin-eventos.html" data-admin-link class="hidden">Admin</a>
+      <a href="login.html" data-login-link>Login</a>
+      <a href="registro.html" data-register-link class="primary-link">Registro</a>
+      <button data-logout-button class="hidden">Salir</button>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">PWA universitaria · Boletos digitales</span>
+          <h1>Eventos del auditorio con vibes coquette</h1>
+          <p class="lead">
+            Compra o reserva boletos para conciertos, obras, conferencias y eventos de la uni.
+            Todo con registro, verificación por correo, historial y panel de administración.
+          </p>
+          <div class="actions">
+            <a class="btn" href="eventos.html">Ver eventos 🎟️</a>
+            <a class="btn secondary" href="registro.html">Crear cuenta</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="glass-panel">
+            <h2>Tu boleto digital</h2>
+            <p>Folio, pago simulado, historial y cupos actualizados en tiempo real con API.</p>
+            <div class="meta">
+              <span class="pill">CRUD</span>
+              <span class="pill">API REST</span>
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">JWT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid cols-3">
+        <article class="card feature">
+          <div class="icon">💌</div>
+          <h3>Correo y verificación</h3>
+          <p>El usuario se registra, recibe enlace de verificación y activa su cuenta.</p>
+        </article>
+        <article class="card feature">
+          <div class="icon">🎟️</div>
+          <h3>Compra de boletos</h3>
+          <p>El sistema descuenta cupos y genera folio con una compra simulada.</p>
+        </article>
+        <article class="card feature">
+          <div class="icon">🛠️</div>
+          <h3>Panel admin</h3>
+          <p>El administrador puede crear, editar, eliminar y consultar eventos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Hecho con moñitos, rosas y programación asíncrona 🎀</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

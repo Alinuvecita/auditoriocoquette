@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7eb6">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+
+  <title>Admin · Auditorio Coquette</title>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">🎀</span>
+      <span>Auditorio Coquette</span>
+    </a>
+    <nav class="nav-links">
+      <span class="small" data-user-name></span>
+      <a href="eventos.html">Eventos</a>
+      <a href="historial.html" data-history-link class="hidden">Mis boletos</a>
+      <a href="perfil.html" data-profile-link class="hidden">Perfil</a>
+      <a href="admin-eventos.html" data-admin-link class="hidden">Admin</a>
+      <a href="login.html" data-login-link>Login</a>
+      <a href="registro.html" data-register-link class="primary-link">Registro</a>
+      <button data-logout-button class="hidden">Salir</button>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="badge">Panel administrador</span>
+        <h1 style="font-size: clamp(2.2rem, 6vw, 4rem);">Gestión de eventos 🛠️</h1>
+        <p class="lead">Aquí se demuestra el CRUD completo: crear, leer, editar y eliminar eventos.</p>
+
+        <section class="card">
+          <h2 id="formTitle">Crear evento nuevo 🎀</h2>
+          <form id="eventForm" class="grid cols-2">
+            <div class="form-group">
+              <label for="titulo">Título</label>
+              <input id="titulo" required>
+            </div>
+            <div class="form-group">
+              <label for="lugar">Lugar</label>
+              <input id="lugar" required>
+            </div>
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input id="fecha" type="date" required>
+            </div>
+            <div class="form-group">
+              <label for="hora">Hora</label>
+              <input id="hora" type="time" required>
+            </div>
+            <div class="form-group">
+              <label for="precio">Precio</label>
+              <input id="precio" type="number" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+              <label for="cupos">Cupos disponibles</label>
+              <input id="cupos" type="number" min="0" required>
+            </div>
+            <div class="form-group">
+              <label for="imagen">URL de imagen</label>
+              <input id="imagen" placeholder="https://...">
+            </div>
+            <div class="form-group">
+              <label for="estado">Estado</label>
+              <select id="estado">
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+              </select>
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="descripcion">Descripción</label>
+              <textarea id="descripcion"></textarea>
+            </div>
+            <div class="actions" style="grid-column: 1 / -1;">
+              <button id="saveButton" class="btn" type="submit">Crear evento</button>
+              <button id="cancelEdit" class="btn secondary hidden" type="button">Cancelar edición</button>
+            </div>
+          </form>
+          <div id="msg" class="hidden"></div>
+        </section>
+
+        <section class="section">
+          <h2>Eventos registrados</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Título</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Precio</th>
+                  <th>Cupos</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="eventsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Boletos vendidos</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Folio</th>
+                  <th>Usuario</th>
+                  <th>Correo</th>
+                  <th>Evento</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                  <th>Fecha compra</th>
+                </tr>
+              </thead>
+              <tbody id="ticketsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+
+  <script src="js/admin-eventos.js"></script>
+</body>
+</html>
