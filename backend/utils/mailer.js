@@ -1,35 +1,40 @@
-const nodemailer = require("nodemailer");
-
-function createTransporter() {
-  const secureValue = String(process.env.SMTP_SECURE || "true").toLowerCase() === "true";
-
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT || 465),
-    secure: secureValue,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS
-    }
-  });
-}
-
 async function sendMail({ to, subject, html }) {
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    console.warn("SMTP no configurado. No se pudo enviar correo real.");
-    console.warn("Correo destino:", to);
-    console.warn("Asunto:", subject);
-    return { skipped: true };
+  if (!process.env.BREVO_API_KEY) {
+    throw new Error("BREVO_API_KEY no configurada en Render");
   }
 
-  const transporter = createTransporter();
+  const senderEmail = process.env.MAIL_SENDER_EMAIL || "glowpass.alixho@gmail.com";
+  const senderName = process.env.MAIL_SENDER_NAME || "Auditorio Uni";
 
-  return transporter.sendMail({
-    from: process.env.MAIL_FROM || process.env.SMTP_USER,
-    to,
-    subject,
-    html
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "api-key": process.env.BREVO_API_KEY,
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      sender: {
+        name: senderName,
+        email: senderEmail
+      },
+      to: [
+        {
+          email: to
+        }
+      ],
+      subject: subject,
+      htmlContent: html
+    })
   });
+
+  const text = await response.text();
+
+  if (!response.ok) {
+    throw new Error(`Brevo error ${response.status}: ${text}`);
+  }
+
+  return text ? JSON.parse(text) : {};
 }
 
 module.exports = { sendMail };
