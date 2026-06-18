@@ -23,7 +23,7 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
   res.json({
     ok: true,
-    app: "Auditorio Coquette API",
+    app: "Auditorio uni API",
     message: "API funcionando correctamente 🎀"
   });
 });
@@ -42,5 +42,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`API Auditorio Coquette corriendo en http://localhost:${PORT}`);
+  console.log(`API Auditorio uni corriendo en http://localhost:${PORT}`);
 });

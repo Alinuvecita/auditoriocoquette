@@ -1,5 +1,5 @@
 {
-  "name": "auditorio-coquette-backend",
+  "name": "auditorio-uni-backend",
   "version": "1.0.0",
   "description": "Backend API para PWA de boletos del auditorio universitario",
   "main": "server.js",

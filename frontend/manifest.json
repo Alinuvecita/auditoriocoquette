@@ -1,5 +1,5 @@
 {
-  "name": "Auditorio Coquette",
+  "name": "Auditorio uni",
   "short_name": "Auditorio",
   "description": "PWA para comprar boletos de eventos del auditorio universitario.",
   "start_url": "./index.html",

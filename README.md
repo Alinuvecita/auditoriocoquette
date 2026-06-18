@@ -1,4 +1,4 @@
-# 🎀 Auditorio Coquette PWA
+# 🎀 Auditorio uni PWA
 
 Aplicación PWA para comprar/reservar boletos de eventos del auditorio universitario.
 
@@ -35,7 +35,7 @@ Instala:
 En PostgreSQL crea una base de datos, por ejemplo:
 
 ```sql
-CREATE DATABASE auditorio_coquette;
+CREATE DATABASE auditorio_uni;
 ```
 
 Luego ejecuta el archivo:
@@ -63,8 +63,7 @@ Configura tus datos:
 
 ```env
 PORT=3000
-DATABASE_URL=postgres://usuario:password@host:5432/auditorio_coquette
-JWT_SECRET=pon_una_clave_larga_y_secreta
+DATABASE_URL=postgres://usuario:password@host:5432/auditorio_uni
 
 FRONTEND_URL=http://127.0.0.1:5500/frontend
 
@@ -73,7 +72,7 @@ SMTP_PORT=465
 SMTP_SECURE=true
 SMTP_USER=tu_correo@gmail.com
 SMTP_PASS=tu_contraseña_de_aplicacion
-MAIL_FROM="Auditorio Coquette <tu_correo@gmail.com>"
+MAIL_FROM="Auditorio uni <tu_correo@gmail.com>"
 
 ADMIN_EMAIL=admin@uni.edu
 ADMIN_PASSWORD=Admin123*
@@ -105,7 +104,7 @@ npm run dev
 Debe salir algo como:
 
 ```text
-API Auditorio Coquette corriendo en http://localhost:3000
+API Auditorio uni corriendo en http://localhost:3000
 ```
 
 ---

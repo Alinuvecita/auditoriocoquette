@@ -60,10 +60,10 @@ router.post("/register", async (req, res) => {
 
     await sendMail({
       to: correoNormalizado,
-      subject: "Verifica tu cuenta - Auditorio Coquette 🎀",
+      subject: "Verifica tu cuenta - Auditorio uni 🎀",
       html: `
         <div style="font-family:Arial,sans-serif;background:#fff0f6;padding:24px;border-radius:18px;color:#5b2741;">
-          <h2>🎀 Bienvenida/o a Auditorio Coquette</h2>
+          <h2>🎀 Bienvenida/o a Auditorio uni </h2>
           <p>Hola ${nombre}, gracias por registrarte.</p>
           <p>Para activar tu cuenta, presiona este botón:</p>
           <p>
@@ -184,7 +184,7 @@ router.post("/forgot", async (req, res) => {
 
       await sendMail({
         to: user.correo,
-        subject: "Recupera tu contraseña - Auditorio Coquette 🎀",
+        subject: "Recupera tu contraseña - Auditorio uni 🎀",
         html: `
           <div style="font-family:Arial,sans-serif;background:#fff0f6;padding:24px;border-radius:18px;color:#5b2741;">
             <h2>🔐 Recuperación de contraseña</h2>

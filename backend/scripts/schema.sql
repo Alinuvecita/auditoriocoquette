@@ -44,6 +44,6 @@ CREATE TABLE boletos (
 
 INSERT INTO eventos (titulo, descripcion, fecha, hora, lugar, precio, cupos_disponibles, imagen, estado)
 VALUES
-('Concierto Rosa Universitario', 'Noche musical con talentos de la universidad, luces rosas y ambiente coquette.', CURRENT_DATE + INTERVAL '7 days', '18:00', 'Auditorio Principal', 80.00, 120, 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80', 'activo'),
+('Concierto Rosa Universitario', 'Noche musical con talentos de la universidad, luces rosas y ambiente lindo.', CURRENT_DATE + INTERVAL '7 days', '18:00', 'Auditorio Principal', 80.00, 120, 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80', 'activo'),
 ('Obra de Teatro: Cartas y Listones', 'Presentación teatral estudiantil con temática romántica y vintage.', CURRENT_DATE + INTERVAL '12 days', '17:30', 'Auditorio Principal', 60.00, 90, 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1000&q=80', 'activo'),
 ('Conferencia Tech Girls', 'Charla sobre programación, creatividad y tecnología para estudiantes.', CURRENT_DATE + INTERVAL '20 days', '10:00', 'Sala Magna', 0.00, 150, 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80', 'activo');

@@ -43,5 +43,5 @@ CHECKLIST DE LA RÚBRICA
     - Historial
     - Descuento de cupos
 
-[✓] Gama rosa/coquette
+[✓] Gama rosa/lido
     - frontend/css/styles.css
