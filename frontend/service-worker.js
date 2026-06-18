@@ -1,4 +1,4 @@
-const CACHE_NAME = "auditorio-uni-cache-v1";
+const CACHE_NAME = "auditorio-uni-cache-v30";
 
 const FILES_TO_CACHE = [
   "./",
@@ -14,7 +14,7 @@ const FILES_TO_CACHE = [
   "./perfil.html",
   "./admin-eventos.html",
   "./css/styles.css",
-  "./js/config.js",
+
   "./js/api.js",
   "./js/main.js",
   "./manifest.json"
