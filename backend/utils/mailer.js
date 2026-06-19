@@ -1,40 +1,52 @@
 async function sendMail({ to, subject, html }) {
-  if (!process.env.BREVO_API_KEY) {
-    throw new Error("BREVO_API_KEY no configurada en Render");
+  const serviceId = process.env.EMAILJS_SERVICE_ID;
+  const templateId = process.env.EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.EMAILJS_PUBLIC_KEY;
+  const privateKey = process.env.EMAILJS_PRIVATE_KEY;
+
+  if (!serviceId || !templateId || !publicKey) {
+    throw new Error("EmailJS no está configurado correctamente");
   }
 
-  const senderEmail = process.env.MAIL_SENDER_EMAIL || "glowpass.alixho@gmail.com";
-  const senderName = process.env.MAIL_SENDER_NAME || "Auditorio Uni";
+  const linkMatch = html.match(/https?:\/\/[^\s"'<]+/);
+  const link = linkMatch ? linkMatch[0] : "";
 
-  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+  const message = html
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const payload = {
+    service_id: serviceId,
+    template_id: templateId,
+    user_id: publicKey,
+    template_params: {
+      to_email: to,
+      subject: subject,
+      message: message,
+      link: link
+    }
+  };
+
+  if (privateKey) {
+    payload.accessToken = privateKey;
+  }
+
+  const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
     method: "POST",
     headers: {
-      accept: "application/json",
-      "api-key": process.env.BREVO_API_KEY,
-      "content-type": "application/json"
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      sender: {
-        name: senderName,
-        email: senderEmail
-      },
-      to: [
-        {
-          email: to
-        }
-      ],
-      subject: subject,
-      htmlContent: html
-    })
+    body: JSON.stringify(payload)
   });
 
   const text = await response.text();
 
   if (!response.ok) {
-    throw new Error(`Brevo error ${response.status}: ${text}`);
+    throw new Error(`EmailJS error ${response.status}: ${text}`);
   }
 
-  return text ? JSON.parse(text) : {};
+  return { ok: true, response: text };
 }
 
 module.exports = { sendMail };
